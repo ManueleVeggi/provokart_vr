@@ -1,6 +1,6 @@
 # ProvokArt
 
-A Speech-based interaction in a VR art gallery. This application is based on #MarkartNow, a civic participation project of **Hamburger Kunsthalle**  
+Automatic speech recognition in a VR art gallery. This application is based on [#MarkartNow](https://www.hamburger-kunsthalle.de/makartnow), a civic participation project of **Hamburger Kunsthalle**  
 
 The project has been developed for an Oculus Head-Mounted Display.
 
