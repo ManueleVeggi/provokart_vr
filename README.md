@@ -10,6 +10,6 @@ A presentation of the project is available in the slides of the [project proposa
 <img src="https://github.com/ManueleVeggi/provokart_vr/blob/d52dbbf02e54dc24501e9912135cc8981c67b257/OpeningScreenshot.png" style="height:25rem">
 </p>
 
-> Read the documentation at the following link
+> Read the **documentation** at the following [link](https://github.com/ManueleVeggi/provokart_vr/blob/ed716b4d59e50df4313b8eef9b7ddab472969aa5/doc.md)
 
 Final Project of "Laboratory of Virtual and Augmented Reality" (Prof. Gustavo Marfia) at University of Bologna (a.y. 2022/2023). 
