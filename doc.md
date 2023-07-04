@@ -38,9 +38,9 @@ Toggling between these GameObjects is made possible through part of the methods 
 - ```BackToOctagon()```: from any page of the MainContentCanvasManager to the OctagonalNavigator;
 - ```GoToASR(int index)```: from the "Section" pages of the MainContentCanvasManager to the ASR page. It is also responsible for reporting the questions visitors are asked to answer to;
 
-The script also contains the method ```RotateOctagon(bool dir)``` to rotate the initial octagonal navigator. 
+The script also contains ```RotateOctagon(bool dir)``` to rotate the initial octagonal navigator. It also defines a method to save the transcribed answer of the visitor (see later).
 
-SaveAnswer(TextMeshProUGUI transcribedAnswer) // App Dictation Experience
+To what pertains the Automatic Speech Recognition, the choice of the Oculus as target device allows to reuse <i>ad hoc</i> SDK, without adopting other strategies (such as the ones described in the proposal presentation). Meta already developed [Voice SDK](https://developer.oculus.com/documentation/unity/voice-sdk-overview/): following the guidelines provided in the [documentation](https://developer.oculus.com/documentation/unity/voice-sdk-transcription/), an "App Dictation Experience" was added. The transcribed answer is saved into .txt through the method ```SaveAnswer(TextMeshProUGUI transcribedAnswer)```.
 
 ## 4. Criticalities and further work 
-Commento rispetto alle possibili criticità della soluzione adottata. >> MODEL, transcription, inaccurate >> PROTOTIPO
+<!-- Commento rispetto alle possibili criticità della soluzione adottata. >> MODEL, transcription, inaccurate >> PROTOTIPO -->
