@@ -28,18 +28,22 @@ Although the first proposal foresaw a virtual explorable gallery, the design of 
 
 The website of the museum indeed only provides a panoramic view in low resolution of the main hall (Makartssaal), which was eventually used as skybox of the final UX. The absence of a sufficient amount of data and the awareness that any manual reconstruction of the room would be inaccurate led to an alternative choice. Following the suggestions provided by Prof. Kenderdine during the course "Cultural Data Sculpting", the informations have been displayed following the metaphore of the Object Navigator, a vertical screen based at the center of a turning circular platform which allows to <i>navigate</i> an object at 360°. 
 
+<p align="center">
 <img src="AdditionalMaterial/ObjectNavigator.jpg">
-
+</p>
 The seven sections in which the project #MakartNow has been articulated and an initial welcoming section are displayed in turning octagonal shape. Users can incrementally rotate thanks to arrows in the interactive UI. Each section contains just a title and a subtitle: the paintings and the sections can be accessed through a specific button. 
 
 Clicking on this element it is indeed possible to open a new canvas, outside the octagonal navigator, which contains for each section the corresponding paintings and questions (in the graph, "section page"). A last button allows to open a new canvas where these questions are re-proposed and visitors can transcribe their answers and save it as txt file.
 
+<p align="center">
 <img src="AdditionalMaterial/DesignElements.png">
+</p>
 
 As txt format can be easily processed by NLP libraries (in particular in Python), the UX does not aim exclusively at extending a non-digital born museum initiative into a virtual and immersive environment, but also to provide a useful evaluation tool for designer:
 
+<p align="center">
 <img src="AdditionalMaterial/Use case.png">
-
+</p>
 ## 3. Software Architecture <a name="softarchi"></a>
 
 Comparing to the original [proposal](https://github.com/ManueleVeggi/provokart_vr/blob/30c5752f6fc384ea2a7d12e9d7b768b83f432727/AdditionalMaterial/Veggi%20Proposta%20Progetto%20LabMarfia.pdf), the main change pertains the target device. As said, the UX is developed for Oculus VR. Besides an apparent incompatibility between HTC Vive and my operating system, this choice has been supported by Prof. Pescarin, my supervisor, as the laboratory she is affiliated to (CNR ISPC) works primarily with this typology of devices. Secondly, the preparation of this project required the attendance of three different Unity Pathways: Essential, Junior Developer, and VR Development, which was based primarily for Oculus Meta devices.
