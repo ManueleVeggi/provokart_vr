@@ -44,6 +44,7 @@ As txt format can be easily processed by NLP libraries (in particular in Python)
 <p align="center">
 <img src="AdditionalMaterial/Use case.png">
 </p>
+
 ## 3. Software Architecture <a name="softarchi"></a>
 
 Comparing to the original [proposal](https://github.com/ManueleVeggi/provokart_vr/blob/30c5752f6fc384ea2a7d12e9d7b768b83f432727/AdditionalMaterial/Veggi%20Proposta%20Progetto%20LabMarfia.pdf), the main change pertains the target device. As said, the UX is developed for Oculus VR. Besides an apparent incompatibility between HTC Vive and my operating system, this choice has been supported by Prof. Pescarin, my supervisor, as the laboratory she is affiliated to (CNR ISPC) works primarily with this typology of devices. Secondly, the preparation of this project required the attendance of three different Unity Pathways: Essential, Junior Developer, and VR Development, which was based primarily for Oculus Meta devices.
