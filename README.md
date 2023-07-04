@@ -49,7 +49,7 @@ The project consists mainly of interactive UI which are nested and grouped into 
     - Octagonal Navigator: consists of a prism with octagonal basis (from Sketchfab) which is invisible as the material is removed. It contains the "Welcome" and the seven "Section Presentation" pages;
     - Main Content Canvas Manager: an empty object collecting credits, "Section" pages and ASR page;
 
-Toggling between these GameObjects is made possible through part of the methods defined in the ```UIManager.cs```. The correct set up of the experience (at the beginning, only the octagonal navigator should be active) is indeed handled by ```Start```. Through the buttons of the UI it is possible to perform:
+Toggling between these GameObjects is made possible through part of the methods defined in the ```UIManager.cs```. The correct set up of the experience (at the beginning, only the octagonal navigator should be active) is indeed handled by ```Start``` (which is also responsible to create the folder where the final transcriptions will be saved). Through the buttons of the UI it is possible to perform:
 - ```OpenMainCanvas(GameObject canvasToDisplay)```: from every page of the OctagonalNavigator to the corresponding one of the MainContentCanvasManager (either credits or "Section" pages);
 - ```BackToOctagon()```: from any page of the MainContentCanvasManager to the OctagonalNavigator;
 - ```GoToASR(int index)```: from the "Section" pages of the MainContentCanvasManager to the ASR page. It is also responsible for reporting the questions visitors are asked to answer to;
