@@ -33,109 +33,14 @@ The project consists mainly of interactive UI which are nested and grouped into 
     - Octagonal Navigator: consists of a prism with octagonal basis (from Sketchfab) which is invisible as the material is removed. It contains the "Welcome" and the seven "Section Presentation" pages;
     - Main Content Canvas Manager: an empty object collecting credits, "Section" pages and ASR page;
 
-****
-**DRAFT**
+Toggling between these GameObjects is made possible through part of the methods defined in the ```UIManager.cs```. The correct set up of the experience (at the beginning, only the octagonal navigator should be active) is indeed handled by ```Start```. Through the buttons of the UI it is possible to perform:
+- ```OpenMainCanvas(GameObject canvasToDisplay)```: from every page of the OctagonalNavigator to the corresponding one of the MainContentCanvasManager (either credits or "Section" pages);
+- ```BackToOctagon()```: from any page of the MainContentCanvasManager to the OctagonalNavigator;
+- ```GoToASR(int index)```: from the "Section" pages of the MainContentCanvasManager to the ASR page. It is also responsible for reporting the questions visitors are asked to answer to;
 
-App Dictation Experience
+The script also contains the method ```RotateOctagon(bool dir)``` to rotate the initial octagonal navigator. 
 
-```
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using System.IO;
-using TMPro;
-using UnityEditor;
-using System;
-
-public class UIManager : MonoBehaviour
-{
-    public GameObject octagonalManager;
-    public GameObject mainCanvasManager;
-
-    public GameObject canvasASR;
-    public TextMeshProUGUI questionsText;
-
-    private void Start()
-    {
-        Directory.CreateDirectory(Application.streamingAssetsPath + "/Export/");
-        octagonalManager.SetActive(true);
-        mainCanvasManager.SetActive(false);
-    }
-
-    public void OpenMainCanvas(GameObject canvasToDisplay)
-    {
-        octagonalManager.SetActive(false);
-
-        mainCanvasManager.SetActive(true);
-        foreach (Transform child in mainCanvasManager.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
-        canvasToDisplay.SetActive(true);
-
-    }
-
-    public void BackToOctagon()
-    {
-        mainCanvasManager.SetActive(false);
-        octagonalManager.SetActive(true);
-    }
-
-
-    public void RotateOctagon(bool dir)
-    {
-        if(dir)
-        {
-            Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, octagonalManager.transform.rotation.eulerAngles.y - 45f,transform.rotation.eulerAngles.z);
-            octagonalManager.transform.rotation = targetRotation;
-        }
-        else
-        {
-            Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, octagonalManager.transform.rotation.eulerAngles.y + 45f, transform.rotation.eulerAngles.z);
-            octagonalManager.transform.rotation = targetRotation;
-        }
-        //octagonalManager.transform.rotation *= Quaternion.Euler(0f, 45f, 0f);
-    }
-
-    public void SaveAnswer(TextMeshProUGUI transcribedAnswer)
-    {
-        DateTime theTime = DateTime.Now;
-
-        string txtDocumentName = Application.streamingAssetsPath + "/Export/" + "Answer_" + theTime.ToString("yyyy_MM_dd\\THH_mm_ss\\Z") + ".txt";
-
-        File.WriteAllText(txtDocumentName, "Questions: \n\n");
-        File.AppendAllText(txtDocumentName, questionsText.text + "\n\n");
-        File.AppendAllText(txtDocumentName, transcribedAnswer.text + "\n");
-
-        AssetDatabase.Refresh();
-    }
-
-    public void GoToASR(int index)
-    {
-        List<string> currentQuestions = new List<string>
-        {
-            "Do you find the painting provocative? Do you think it's sexist?\nFacts - are they as important as immagination?\nHow do you see power depicted here?",
-            "Can History painting build identity?\nDo these historical people / situations trigger your compassion?\nWould you have imagined Napoleon like this?",
-            "Is that love of detail or a painted film set?\nWas everything really better in the past?\nIs that backward-looking or just nostalgic?",
-            "Who is the fairest of them all, and who can judge?\nFemale power - Male power?\nIs that admiration, voyeurism or sexism?",
-            "Do you think that's kitschy or moving?\nWhat if the first impression is deceptive?\nDoes it still touch us today?",
-            "Is it authentic or staged?\nDistant lands - a familiar cliché?\nDo you believe what you see?",
-            "Is that Art or kitsch?\nIs that instagrammable?\nWould you share these views on social media?"
-        };
-
-        questionsText.text = currentQuestions[index];
-
-        foreach (Transform child in mainCanvasManager.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
-        canvasASR.SetActive(true);
-    }
-}
-```
+SaveAnswer(TextMeshProUGUI transcribedAnswer) // App Dictation Experience
 
 ## 4. Criticalities and further work 
 Commento rispetto alle possibili criticità della soluzione adottata. >> MODEL, transcription, inaccurate >> PROTOTIPO
