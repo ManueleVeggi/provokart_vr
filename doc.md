@@ -1,12 +1,18 @@
 # Documentantion
 
-## 1. Introduction
+## Table of content 
+- [**Introduction**](#introduction)
+- [**Design and Use Case**](#usecase)
+- [**Software Architecture**](#softarchi)
+- [**Criticalities and Further Work**](#criticalities)
+
+## 1. Introduction <a name="introduction"></a>
 
 "ProvokArt" is a VR experience for Oculus HMD, based on the initiative #MakartNow of the Hamburger Kunsthalle. This project consists of a set of provocative questions which have been added to traditional explanatory labels: their function is to suggest visitors new possible interpretations, highlighting what a collection of 19th century painting can still teach us about our society.
 
 The core function of "ProvokArt" is an automatic speech recognition system, which satisfies a more and more demanded requirement in interaction design in the cultural heritage sector, i.e. the possibility of evaluating <i>in itinere</i> the prototypes, gathering data directly from the visitors. Through the verbalization process it is indeed possible to analyze the fulfillment of specific verbalization goals: transcribing the speech of the visitors and collecting it in a corpus is hence a valuable resource.
 
-## 2. Design and Use Case
+## 2. Design and Use Case <a name="usecase"></a>
 
 Although the first proposal foresaw a virtual explorable gallery, the design of the application was considerably changed after the familiarization with the visualization systems of the Laboratory of Experimental Museology at the EPFL of Lausanne and the recognition of existing data for the 3D reconstruction of the exhibition hall. 
 
@@ -24,7 +30,7 @@ As txt format can be easily processed by NLP libraries (in particular in Python)
 
 <img src="AdditionalMaterial/Use case.png">
 
-## 3. Software Architecture
+## 3. Software Architecture <a name="softarchi"></a>
 
 Comparing to the original proposal, the main change pertains the target device. As said, the UX is developed for Oculus VR. Besides an apparent incompatibility between HTC Vive and my operating system, this choice has been supported by Prof. Pescarin, my supervisor, as the laboratory she is affiliated to (CNR ISPC) works primarily with this typology of devices. Secondly, the preparation of this project required the attendance of three different Unity Pathways: Essential, Junior Developer, and VR Development, which was based primarily for Oculus Meta devices.
 
@@ -42,5 +48,5 @@ The script also contains ```RotateOctagon(bool dir)``` to rotate the initial oct
 
 To what pertains the Automatic Speech Recognition, the choice of the Oculus as target device allows to reuse <i>ad hoc</i> SDK, without adopting other strategies (such as the ones described in the proposal presentation). Meta already developed [Voice SDK](https://developer.oculus.com/documentation/unity/voice-sdk-overview/): following the guidelines provided in the [documentation](https://developer.oculus.com/documentation/unity/voice-sdk-transcription/), an "App Dictation Experience" was added. The transcribed answer is saved into .txt through the method ```SaveAnswer(TextMeshProUGUI transcribedAnswer)```.
 
-## 4. Criticalities and further work 
+## 4. Criticalities and Further Work <a name="criticalities"></a>
 <!-- Commento rispetto alle possibili criticità della soluzione adottata. >> MODEL, transcription, inaccurate >> PROTOTIPO -->
